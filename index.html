@@ -10,7 +10,7 @@
 
     <header class="main-header">
         <h1>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</h1>
-        <p><strong>Proyecto:</strong> Simulador de Crecimiento de Población de Conejitos</p>
+        <p><strong>Proyecto:</strong> Crecimiento de Población de Conejitos</p>
         <p><strong>Estudiante:</strong> Lucy Cosme Ticona</p>
     </header>
 
@@ -33,7 +33,11 @@
             <h2>Panel de Control Biológico</h2>
             <form id="formularioConejos" onsubmit="return false;">
                 <div class="form-group">
-                    <label for="cantidadTerminos">Número de meses o etapas a simular (1 - 30):</label>
+                    <label for="poblacionInicial">Cantidad inicial de conejos:</label>
+                    <input type="number" id="poblacionInicial" min="1" placeholder="Ej. 2" required>
+                </div>
+                <div class="form-group">
+                    <label for="cantidadTerminos">Tiempo a simular (en meses, 1 - 30):</label>
                     <input type="number" id="cantidadTerminos" min="1" max="30" placeholder="Ej. 10" required>
                 </div>
                 <button type="button" id="btnEjecutar" class="btn-submit">Simular Población</button>
@@ -43,7 +47,7 @@
         <section class="card">
             <h2>Resultado del Crecimiento</h2>
             <div id="resultado" class="output-area">
-                El sistema está listo. Ingrese el número de meses en el formulario para calcular el crecimiento poblacional en pantalla.
+                El sistema está listo. Ingrese los datos en el formulario para calcular el crecimiento poblacional en pantalla.
             </div>
         </section>
 
