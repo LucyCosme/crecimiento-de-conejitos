@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</h1>
+        <p><strong>Proyecto:</strong> Simulador de Crecimiento de Población de Conejitos</p>
+        <p><strong>Estudiante:</strong> Lucy Cosme Ticona</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <h2>Contexto del Problema Real</h2>
+            <p>
+                Históricamente, la serie de Fibonacci nació para modelar la reproducción idealizada de una población de conejos mes a mes. En la práctica de la biología de poblaciones, predecir este crecimiento acumulativo es vital para gestionar recursos y espacios. Además, para los investigadores biológicos es fundamental detectar cuándo la población total alcanza un número primo, ya que matemáticamente estos valores representan hitos de control biológico e inmunológico donde la población no puede dividirse en subgrupos homogéneos, facilitando el aislamiento de muestras biológicas seguras.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Explicación del Algoritmo</h2>
+            <p><strong>Crecimiento con Fibonacci sin vectores:</strong> Siguiendo el planteamiento original, la población inicial se establece en variables de control estáticas. Mediante un ciclo repetitivo se calcula el incremento de conejos sumando las poblaciones de los dos meses anteriores empleando variables simples (a, b, c) para evitar la sobrecarga de arrays en memoria.</p>
+            <p><strong>Filtro de Control Sanitario (Números Primos):</strong> La cantidad de conejos calculada en cada etapa pasa por un bucle iterativo que cuenta sus divisores exactos. Si el número resultante posee únicamente dos divisores (la unidad y sí mismo), el sistema activa una alerta biológica en la pantalla.</p>
+        </section>
+
+        <section class="card">
+            <h2>Panel de Control Biológico</h2>
+            <form id="formularioConejos" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="cantidadTerminos">Número de meses o etapas a simular (1 - 30):</label>
+                    <input type="number" id="cantidadTerminos" min="1" max="30" placeholder="Ej. 10" required>
+                </div>
+                <button type="button" id="btnEjecutar" class="btn-submit">Simular Población</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Resultado del Crecimiento</h2>
+            <div id="resultado" class="output-area">
+                El sistema está listo. Ingrese el número de meses en el formulario para calcular el crecimiento poblacional en pantalla.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Conclusión</h2>
+            <p>
+                La integración de la programación con modelos matemáticos demuestra cómo las reglas abstractas gobiernan la naturaleza. Al automatizar la secuencia de Fibonacci para estimar la población junto con el análisis de números primos para los puntos de control, los biólogos y desarrolladores de software pueden crear herramientas interactivas eficaces para simular ecosistemas estables.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Enlaces del Proyecto</h2>
+            <div class="links-container">
+                <a href="https://github.com/TU_USUARIO/desafio-poblacion-conejos" target="_blank" class="btn-link">Enlace del repositorio Git</a>
+                <a href="https://TU_USUARIO.github.io/desafio-poblacion-conejos/" target="_blank" class="btn-link web">Enlace de la página publicada</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 - Universidad Mayor de San Andrés - Facultad de Ciencias Puras y Naturales</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
