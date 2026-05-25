@@ -23,9 +23,9 @@ function simularPoblacionConejos() {
     let b = 1;
     let c;
 
-    let reporteHtml = "SIMULACIÓN DE CRECIMIENTO DE POBLACIÓN DE CONEJOS:\n";
+    let reporteHtml = "SIMULACIÓN DE CRECIMIENTO DE POBLACIÓN DE CONEJITOS:\n";
     reporteHtml += `Población Inicial: ${conejosIniciales} conejos\n`;
-    reporteHtml += "----------------------------------------------------------------------\n";
+    reporteHtml += "\n";
 
     for (let i = 1; i <= meses; i++) {
         let factorFibonacci;
@@ -51,14 +51,14 @@ function simularPoblacionConejos() {
         }
 
         if (contadorDivisores === 2) {
-            reporteHtml += `Mes ${i}: Población de [ ${cantidadConejos} ] conejos -> <span class="badge-primo">[HITO SANITARIO - NÚMERO PRIMO DETECTADO]</span>\n`;
+            reporteHtml += `Mes ${i}: Población de  ${cantidadConejos}  conejos -> <span class="badge-primo">HITO SANITARIO - NÚMERO PRIMO DETECTADO</span>\n`;
         } else {
-            reporteHtml += `Mes ${i}: Población de [ ${cantidadConejos} ] conejos -> [Crecimiento Regular]\n`;
+            reporteHtml += `Mes ${i}: Población de  ${cantidadConejos}  conejos -> Crecimiento Regular\n`;
         }
     }
 
-    reporteHtml += "----------------------------------------------------------------------\n";
-    reporteHtml += "Simulación completada. Todos los datos han sido renderizados.";
+    reporteHtml += "\n";
+    reporteHtml += "Resultados de conejitos compleetados";
 
     document.getElementById("resultado").innerHTML = reporteHtml;
 }
