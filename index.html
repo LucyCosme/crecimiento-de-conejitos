@@ -1,77 +1,314 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</title>
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FiboQuant Analytica — Desafío Web 2005</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
 
-    <header class="main-header">
-        <h1>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</h1>
-        <p><strong>Proyecto:</strong> Crecimiento de Población de Conejitos</p>
-        <p><strong>Estudiante:</strong> Lucy Cosme Ticona</p>
-    </header>
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-icon">◈</span>
+        <div>
+          <h1 class="brand-title">FiboQuant<span class="accent"> Analytica</span></h1>
+          <p class="brand-meta">LUCY COSME TICONA </p>
+        </div>
+      </div>
+      <nav class="header-nav" id="headerNav" style="display:none;">
+        <button class="nav-btn active" onclick="showModule(1)" id="nav1"> · Fibonacci &amp; Mercado</button>
+        <button class="nav-btn" onclick="showModule(2)" id="nav2"> · Contraseña segura</button>
+        <button class="nav-btn" onclick="showModule(3)" id="nav3"> · AgroTech &amp; Plagas</button>
+        <button class="nav-btn nav-btn-back" onclick="showHome()">← Inicio</button>
+      </nav>
+    </div>
+  </header>
 
-    <main class="container">
-        
-        <section class="card">
-            <h2>Contexto del Problema Real</h2>
-            <p>
-                Históricamente, la serie de Fibonacci nació para modelar la reproducción idealizada de una población de conejos mes a mes. En la práctica de la biología de poblaciones, predecir este crecimiento acumulativo es vital para gestionar recursos y espacios. Además, para los investigadores biológicos es fundamental detectar cuándo la población total alcanza un número primo, ya que matemáticamente estos valores representan hitos de control biológico e inmunológico donde la población no puede dividirse en subgrupos homogéneos, facilitando el aislamiento de muestras biológicas seguras.
-            </p>
-        </section>
+  <main>
 
-        <section class="card">
-            <h2>Explicación del Algoritmo</h2>
-            <p><strong>Crecimiento con Fibonacci sin vectores:</strong> Siguiendo el planteamiento original, la población inicial se establece en variables de control estáticas. Mediante un ciclo repetitivo se calcula el incremento de conejos sumando las poblaciones de los dos meses anteriores empleando variables simples (a, b, c) para evitar la sobrecarga de arrays en memoria.</p>
-            <p><strong>Filtro de Control Sanitario (Números Primos):</strong> La cantidad de conejos calculada en cada etapa pasa por un bucle iterativo que cuenta sus divisores exactos. Si el número resultante posee únicamente dos divisores (la unidad y sí mismo), el sistema activa una alerta biológica en la pantalla.</p>
-        </section>
+    <section id="homeSection" class="home-section">
+      <div class="home-hero">
+        <div class="home-hero-label">MATEMÁTICA RESOLVIENDO PROBLEMAS · Informática &amp; Economía</div>
+        <h2 class="home-hero-title">BIENVENIDO </h2>
+        <p class="home-hero-sub">Empecemos a explorar </p>
+      </div>
+      <div class="home-cards">
 
-        <section class="card">
-            <h2>Panel de Control Biológico</h2>
-            <form id="formularioConejos" onsubmit="return false;">
-                <div class="form-group">
-                    <label for="poblacionInicial">Cantidad inicial de conejos:</label>
-                    <input type="number" id="poblacionInicial" min="1" placeholder="Ej. 2" required>
-                </div>
-                <div class="form-group">
-                    <label for="cantidadTerminos">Tiempo a simular (en meses, 1 - 30):</label>
-                    <input type="number" id="cantidadTerminos" min="1" max="30" placeholder="Ej. 10" required>
-                </div>
-                <button type="button" id="btnEjecutar" class="btn-submit">Simular Población</button>
-            </form>
-        </section>
+        <div class="home-card" onclick="showModule(1)">
+          <div class="home-card-num">01</div>
+          <div class="home-card-icon">◈</div>
+          <h3 class="home-card-title">Fibonacci &amp; Mercado</h3>
+          <p class="home-card-desc">Análisis de retrocesos Fibonacci aplicados a mercados financieros con el número áureo y ondas de Elliott.</p>
+          <span class="home-card-cta">Ingresar →</span>
+        </div>
 
-        <section class="card">
-            <h2>Resultado del Crecimiento</h2>
-            <div id="resultado" class="output-area">
-                El sistema está listo. Ingrese los datos en el formulario para calcular el crecimiento poblacional en pantalla.
+        <div class="home-card" onclick="showModule(2)">
+          <div class="home-card-num">02</div>
+          <div class="home-card-icon">◆</div>
+          <h3 class="home-card-title">CREA CONTRASEÑAS SEGURAS CON NUMEROS PRIMOS</h3>
+          <p class="home-card-desc">Verificador de primalidad y simulador de contraseñas seguras basado en números primos.</p>
+          <span class="home-card-cta">Ingresar →</span>
+        </div>
+
+        <div class="home-card" onclick="showModule(3)">
+          <div class="home-card-num">03</div>
+          <div class="home-card-icon">○</div>
+          <h3 class="home-card-title">AgroTech &amp; Plagas</h3>
+          <p class="home-card-desc">Modelado de infestación biológica y calendario de erradicación de plagas en cultivos mediante Fibonacci y números primos.</p>
+          <span class="home-card-cta">Ingresar →</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="module" id="module1">
+      <div class="panel-grid">
+
+        <div class="panel panel-theory span-full">
+          <div class="panel-label">PROBLEMÁTICA DE MERCADOS</div>
+          <h2 class="panel-title">Sucesión de Fibonacci &amp; el Número Áureo en Ondas de Mercado</h2>
+          <p class="panel-body">
+            La <strong>Sucesión de Fibonacci</strong> (<em>Fₙ = Fₙ₋₁ + Fₙ₋₂</em>) genera una progresión
+            cuyas razones consecutivas convergen al <strong>Número Áureo φ ≈ 1.618</strong>, cuyo inverso es
+            <strong>0.618</strong> — denominado la «Zona Áurea Crítica». En el análisis técnico de mercados
+            financieros, este ratio no es una curiosidad estética: es una métrica cuantitativa que delimita
+            zonas de alta probabilidad de reversión de precio. Según la teoría de ondas de Elliott, los movimientos
+            de mercado se estructuran en impulsos (5 ondas) y correcciones (3 ondas), y los niveles de
+            retroceso más respetados estadísticamente son exactamente los derivados del sistema áureo:
+            23.6%, 38.2%, 50.0% y 61.8%. Una gestión de riesgo institucional los utiliza para fijar zonas
+            de entrada, salida y Stop-Loss con fundamento matemático, no especulativo.
+          </p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span><span class="code-filename">fiboquant_core.js</span></div>
+            <pre class="code-body"><span class="kw">let</span> minPrecio  = parseFloat(document.getElementById(<span class="str">"precioMin"</span>).value);
+<span class="kw">let</span> maxPrecio  = parseFloat(document.getElementById(<span class="str">"precioMax"</span>).value);
+<span class="kw">let</span> delta      = maxPrecio - minPrecio;
+
+<span class="kw">let</span> nivel236   = maxPrecio - delta * <span class="num">0.236</span>;
+<span class="kw">let</span> nivel382   = maxPrecio - delta * <span class="num">0.382</span>;
+<span class="kw">let</span> nivel500   = maxPrecio - delta * <span class="num">0.500</span>;
+<span class="kw">let</span> nivelAureo = maxPrecio - delta * <span class="num">0.618</span>;</pre>
+          </div>
+        </div>
+
+        <div class="panel panel-form">
+          <div class="panel-label">Entrada de Datos</div>
+          <h3 class="panel-subtitle">Parámetros del Activo</h3>
+          <form id="fibForm" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label" for="precioMin">Precio Mínimo — Soporte Base</label>
+              <input type="number" id="precioMin" class="form-input" placeholder="Ej. 180.00" step="0.01" min="0" required />
             </div>
-        </section>
-
-        <section class="card">
-            <h2>Conclusión</h2>
-            <p>
-                La integración de la programación con modelos matemáticos demuestra cómo las reglas abstractas gobiernan la naturaleza. Al automatizar la secuencia de Fibonacci para estimar la población junto con el análisis de números primos para los puntos de control, los biólogos y desarrolladores de software pueden crear herramientas interactivas eficaces para simular ecosistemas estables.
-            </p>
-        </section>
-
-        <section class="card">
-            <h2>Enlaces del Proyecto</h2>
-            <div class="links-container">
-                <a href="https://github.com/LucyCosme/crecimiento-de-conejitos" target="_blank" class="btn-link">Enlace del repositorio Git</a>
-                <a href="https://LucyCosme.github.io/crecimiento-de-conejitos/" target="_blank" class="btn-link web">Enlace de la página publicada</a>
+            <div class="form-group">
+              <label class="form-label" for="precioMax">Precio Máximo — Resistencia</label>
+              <input type="number" id="precioMax" class="form-input" placeholder="Ej. 250.00" step="0.01" min="0" required />
             </div>
-        </section>
+           <div class="form-group">
+              <label class="panel-label" for="activoNombre">Nombre del Activo (Criptomoneda)</label>
+              <select id="activoNombre" class="form-input" style="background-color: var(--bg-input); padding-right: 2rem;">
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="BNB">Binance Coin (BNB)</option>
+                <option value="SOL">Solana (SOL)</option>
+                <option value="XRP">Ripple (XRP)</option>
+                <option value="ADA">Cardano (ADA)</option>
+                <option value="DOGE">Dogecoin (DOGE)</option>
+                <option value="SHIB">Shiba Inu (SHIB)</option>
+                <option value="AVAX">Avalanche (AVAX)</option>
+                <option value="DOT">Polkadot (DOT)</option>
+              </select>
+            </div>
 
-    </main>
+            <button type="button" class="btn-primary" onclick="calcularFibonacci()">Calcular Retrocesos</button>
+          </form>
+          <div id="fibError" class="error-msg" style="display:none;"></div>
+        </div>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 - Universidad Mayor de San Andrés - Facultad de Ciencias Puras y Naturales</p>
-    </footer>
+        <div class="panel panel-chart">
+          <div class="panel-label">Gráfico Técnico SVG</div>
+          <div class="chart-wrapper" id="fibChartWrapper">
+            <div class="chart-placeholder" id="fibPlaceholder">
+              <span class="placeholder-icon">◈</span>
+              <p>Ingrese los parámetros para generar el análisis visual</p>
+            </div>
+            <div id="fibChart" style="display:none;"></div>
+          </div>
+        </div>
 
-    <script src="js/script.js"></script>
+        <div class="panel panel-results span-full" id="fibResults" style="display:none;">
+          <div class="panel-label">Dictamen Analítico</div>
+          <h3 class="panel-subtitle" id="fibResultsTitle"></h3>
+          <div id="fibTable"></div>
+          <div id="fibReport" class="report-block"></div>
+        </div>
+
+        <div class="panel panel-conclusion span-full">
+          <div class="panel-label">Conclusión</div>
+          <p class="panel-body">
+            La integración de modelos cuantitativos basados en la Sucesión de Fibonacci en los procesos de
+            gestión de riesgo financiero representa una evolución metodológica respecto al análisis discrecional.
+            Al anclar las decisiones de entrada, salida y Stop-Loss a niveles matemáticamente derivados del
+            cociente áureo, el operador institucional reduce la exposición a sesgos cognitivos y establece
+            un marco probabilístico reproducible. La herramienta presentada no sustituye el juicio analítico,
+            sino que provee una capa de validación cuantitativa que eleva la consistencia operativa.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="module" id="module2">
+      <div class="panel-grid">
+
+        <div class="panel panel-theory span-full">
+          <div class="panel-label">PROBLEMÁTICA DE CODIGOS SEGUROS</div>
+          <h2 class="panel-title">Números Primos y la Arquitectura de la Seguridad Digital</h2>
+          <p class="panel-body">
+            Un <strong>número primo</strong> es aquel divisible únicamente entre 1 y sí mismo. El protocolo que protege desde transacciones bancarias hasta el candado verde de su navegador. El principio es elegante: multiplicar dos primos enormes es computacionalmente trivial, pero <em>factorizar el producto</em> para recuperar los factores originales resulta prácticamente inviable a escala industrial. Con números de 300+ dígitos, el tiempo estimado supera la edad del universo incluso con infraestructura de cómputo masivo. Esto no es seguridad por oscuridad; es seguridad por complejidad matemática demostrada.
+          </p>
+          <div class="analogy-grid">
+            <div class="analogy-card">
+              <div class="analogy-icon">◆</div>
+              <strong>Clave Pública</strong>
+              <p>El candado abierto que cualquiera puede usar para cifrar un mensaje dirigido a usted.</p>
+            </div>
+            <div class="analogy-card">
+              <div class="analogy-icon">◈</div>
+              <strong>Clave Privada</strong>
+              <p>La llave maestra que solo usted posee, derivada de los dos primos secretos originales.</p>
+            </div>
+            <div class="analogy-card">
+              <div class="analogy-icon">○</div>
+              <strong>HTTPS / SSL</strong>
+              <p>El protocolo visible en su navegador que garantiza que nadie intercepta la comunicación.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-form">
+          <div class="panel-label">Simulador de Verificación</div>
+          <h3 class="panel-subtitle">Verificar si un número puede ser clave de seguridad</h3>
+          <form id="rsaForm" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label" for="rsaNumero">Número a Verificar</label>
+              <input type="number" id="rsaNumero" class="form-input" placeholder="Ej. 7919" min="2" required />
+            </div>
+            <button type="button" class="btn-primary" onclick="verificarPrimo()">Analizar Primalidad</button>
+          </form>
+          <div id="rsaError" class="error-msg" style="display:none;"></div>
+        </div>
+
+        <div class="panel panel-chart">
+          <div class="panel-label">Consola de Verificación</div>
+          <div class="chart-wrapper rsa-result-area">
+            <div id="rsaPlaceholder" class="chart-placeholder">
+              <span class="placeholder-icon">◈</span>
+              <p>Ingrese un entero positivo para evaluar su viabilidad criptográfica estructural.</p>
+            </div>
+            <div id="rsaResult" style="display:none; width: 100%;"></div>
+          </div>
+        </div>
+        <div class="panel panel-conclusion span-full">
+          <div class="panel-label">Conclusión</div>
+          <p class="panel-body">
+            La convergencia de los algoritmos de primalidad en la generación de claves asimétricas y la aleatoriedad estructural demuestra que los modelos matemáticos abstractos son el pilar fundamental de la seguridad informática moderna. La validación rigurosa de la entropía y la detección de factores primos bloquean de manera efectiva los vectores de ataque por fuerza bruta y diccionarios automatizados, garantizando la integridad de los datos y transformando la aritmética teórica en una barrera criptográfica robusta y de alta confiabilidad en el mundo real.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="module" id="module3">
+      <div class="panel-grid">
+
+        <div class="panel">
+          <div class="panel-label">Contexto de Aplicación · AgroTech</div>
+          <h3 class="panel-title">Modelado de Infestación y Erradicación</h3>
+          <p class="panel-body">
+            En la agronomía de precisión, las poblaciones de plagas (como pulgones o ácaros) se propagan inicialmente siguiendo la
+            <strong>Sucesión de Fibonacci</strong> debido a sus ciclos biológicos de maduración y reproducción.
+            Para destruirlas de manera óptima sin generar resistencia genética a los compuestos ni sobrecostos químicos, las intervenciones críticas
+            deben programarse en fases de vulnerabilidad biológica asimétricas determinadas estrictamente por la presencia de <strong>Números Primos</strong>.
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-label">Lógica Computacional</div>
+          <h3 class="panel-title">Filtro de Inmunidad y Residuo Primo</h3>
+          <p class="panel-body">
+            El sistema proyecta el crecimiento biológico mediante variables dinámicas simples basándose en la cantidad inicial de insectos.
+            Cada resultado pasa por un filtro de división modular diferencial. Si la población de la semana posee exactamente
+            dos divisores, se declara estado de vulnerabilidad y se calcula el día exacto de exterminación aplicando el residuo modular <code>(Población % 7)</code>.
+          </p>
+        </div>
+
+        <div class="panel panel-form">
+          <div class="panel-label">Panel de Registro de Cultivos</div>
+          <form id="formPlagas" onsubmit="event.preventDefault(); simularPlaga();">
+            <div class="form-group">
+              <label class="form-label" for="tipoPlaga">Vector de Infestación (Tipo de Plaga)</label>
+              <select id="tipoPlaga" class="form-input" style="background-color: var(--bg-input); padding-right: 2rem;">
+                <option value="Pulgones">Pulgones (Aphididae)</option>
+                <option value="Langostas">Langostas (Acrididae)</option>
+                <option value="Acaros">Acaros Rojos (Tetranychidae)</option>
+                <option value="Acaros">Caracoles (Cornu aspersum)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cantidadInicial">Población Inicial Identificada (m²)</label>
+              <input type="number" id="cantidadInicial" class="form-input" min="1" max="100" value="1" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="semanasSimulacion">Periodo de Proyección (Semanas)</label>
+              <input type="number" id="semanasSimulacion" class="form-input" min="1" max="25" value="8" required />
+            </div>
+
+            <button type="submit" class="btn-primary">Ejecutar Plan de Erradicación</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-label">Calendario de Diagnóstico y Ataque</div>
+          <div id="resultadoPlagas" class="plagas-container-scroll">
+            <div class="code-block" style="margin-top: 0;">
+              <div class="code-header"><span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span><span class="code-filename">agrotech_monitor.sh</span></div>
+              <pre class="code-body" style="color: var(--text-muted); font-size: 0.8rem; padding: 1rem;">Configure los parámetros en el panel izquierdo y ejecute la simulación de bioseguridad para compilar el cronograma...</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-conclusion span-full">
+          <div class="panel-label">Conclusión</div>
+          <p class="panel-body">
+            La convergencia de la Sucesión de Fibonacci en la estructura de propagación de plagas y la teoría de
+            números primos en el motor automatizado de mitigación demuestra que los modelos matemáticos
+            abstractos poseen aplicaciones de campo directas y robustas. La aleatoriedad controlada
+            del sistema de exterminación basada en la primalidad elimina las ventanas adaptativas de los vectores biológicos,
+            mientras que el cálculo del residuo semanal optimiza los insumos, generando un marco operativo altamente sustentable.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">FiboQuant Analytica · Desafío Web 2005</span>
+      <div class="footer-links">
+        <a href="https://github.com/LucyCosme/crecimiento-de-conejitos?authuser=0" class="footer-link" target="_blank" rel="noopener">Repositorio Git →</a>
+        <a href="https://lucycosme.github.io/crecimiento-de-conejitos/?authuser=0" class="footer-link" target="_blank" rel="noopener">Página Publicada →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
