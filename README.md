@@ -92,4 +92,4 @@ El proyecto fue desarrollado bajo las siguientes reglas del desafío:
 
 ## Autor
 
-Desarrollado por **Lucy Cosme** para el Desafío Web 2005 — Informática & Economía.
+Desarrollado por **Lucy Cosme**.
